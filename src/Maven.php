@@ -187,7 +187,7 @@ class Maven {
 		}
 
 		$faqs = $query->paginate($limit);
-		$locales = Faq::distinct('locale')->lists('locale');
+		$locales = Faq::distinct('locale')->pluck('locale');
 		$sort_values = Faq::sortSelectValues();
 		$tag_values = Faq::tagValues();
 
